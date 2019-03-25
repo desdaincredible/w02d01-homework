@@ -261,7 +261,7 @@ const bondFilms = [
   { "title" : "License to Kill", "year" : 1989, "actor" : "Timothy Dalton", "gross" : "$285,157,191" }
 ];
 
-//Create a new array called bondTitles with only the titles of the Bond films, 
+//5. Create a new array called bondTitles with only the titles of the Bond films, 
 //and console.log the new array.
 const bondTitles = [];
 
@@ -270,6 +270,22 @@ for (let key in bondFilms) {
 }
 
 console.log(bondTitles);
+
+
+
+// 6. Create a new array oddBonds, of only the Bond films released on 
+//odd-numbered years.
+const oddBonds = [];
+console.log(bondFilms[0].year);
+
+for (let key in bondFilms) {
+    if (bondFilms[key].year % 2 !== 0) {
+        oddBonds.push(bondFilms[key].title);
+    }
+}
+
+console.log(oddBonds);
+
 
 
 
