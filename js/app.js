@@ -263,13 +263,13 @@ const bondFilms = [
 
 //5. Create a new array called bondTitles with only the titles of the Bond films, 
 //and console.log the new array.
-const bondTitles = [];
+// const bondTitles = [];
 
-for (let key in bondFilms) {
-    bondTitles.push(bondFilms[key].title);
-}
+// for (let key in bondFilms) {
+//     bondTitles.push(bondFilms[key].title);
+// }
 
-console.log(bondTitles);
+// console.log(bondTitles);
 
 
 
@@ -287,10 +287,68 @@ for (let key in bondFilms) {
 console.log(oddBonds);
 
 
+// Determine the total cumulative gross of the Bond franchise, and console.log 
+//the result.
+// Hint: To make the grosses into usable numbers, look into the .replace 
+//Javascript method (there are many ways to do this, however). Look into 
+//parseInt() also.
+
+const gross = [];
+
+for (let key in bondFilms) {
+    gross.push(bondFilms[key].gross)
+}
+
+console.log(gross);
+
+let minusCrap = [];
+let minusCrap2 = [];
+let minusCrap3 = [];
+let minusCrap4 = [];
+
+for (let i = 0; i < gross.length; i++) {
+    minusCrap.push(gross[i].replace('$', ""));
+    minusCrap2.push(minusCrap[i].replace(',', ""));
+    minusCrap3.push(minusCrap2[i].replace(',', ""));
+    minusCrap4.push(minusCrap3[i].replace(',', ""));
+}
+console.log(minusCrap);
+console.log(minusCrap2);
+console.log(minusCrap3);
+console.log(minusCrap4);
 
 
+let grossWorking = [];
+let grossArray = [];
+for (let i = 0; i < minusCrap4.length; i++) {
+    grossWorking = parseInt(minusCrap4[i]);
+    grossArray.push(grossWorking);
+    console.log(grossArray);
+
+    // grossSum += minusCrap4[i];
+}
+console.log(grossWorking);
+console.log(grossSum);
 
 
+//THIS IS THE PART THAT ISN'T WORKING. SAYS grossSum ISN'T DEFINED FOR SOME REASON.
+
+let grossSum = 0;
+
+for (let i = 0; i < grossArray.length; i++) {
+    grossSum += grossArray[i];
+}
+
+console.log(grossSum);
+
+
+// const grossAdd = "";
+
+// for (let i = 0; i < gross.length; i++) {
+//     const grossAdd = parseInt(gross[i]);
+// }
+
+// console.log(grossAdd);
 
 
 
